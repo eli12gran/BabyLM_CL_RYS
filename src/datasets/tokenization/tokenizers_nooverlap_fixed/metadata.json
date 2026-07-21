@@ -1,0 +1,19 @@
+{
+  "strategy": "NOOVERLAP",
+  "languages": [
+    "eng",
+    "nld",
+    "zho"
+  ],
+  "language_tags": {
+    "eng": "<EN>",
+    "nld": "<NL>",
+    "zho": "<ZH>"
+  },
+  "total_vocab_size": 48000,
+  "vocab_sizes_per_language": {
+    "eng": 16000,
+    "nld": 16000,
+    "zho": 16000
+  }
+}

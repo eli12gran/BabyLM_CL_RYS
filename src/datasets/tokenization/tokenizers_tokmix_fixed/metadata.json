@@ -1,0 +1,106 @@
+{
+  "strategy": "TOKMIX",
+  "description": "Monolingual SentencePiece-style Unigram tokenizers were merged by weighted average of vocabulary unit probabilities, then sorted and trimmed.",
+  "languages": [
+    "eng",
+    "nld",
+    "zho"
+  ],
+  "weights": {
+    "eng": 0.3333333333333333,
+    "nld": 0.3333333333333333,
+    "zho": 0.3333333333333333
+  },
+  "target_vocab_size": 48000,
+  "actual_vocab_size": 48000,
+  "special_tokens": [
+    "<UNK>",
+    "<PAD>",
+    "<CLS>",
+    "<SEP>",
+    "<MASK>"
+  ],
+  "sentencepiece_replacement": "▁",
+  "pre_tokenizer": "Metaspace/SentencePiece-style, not ByteLevel",
+  "per_language_non_special_vocab_sizes": {
+    "eng": 23995,
+    "nld": 23995,
+    "zho": 23995
+  },
+  "union_non_special_vocab_size": 69221,
+  "protected_base_pieces_size": 6442,
+  "selected_non_special_vocab_size": 47995,
+  "overlap_summary": {
+    "tokens_seen_in_3_language(s)": 2,
+    "tokens_seen_in_2_language(s)": 2760,
+    "tokens_seen_in_1_language(s)": 66459
+  },
+  "config": {
+    "languages": [
+      "eng",
+      "nld",
+      "zho"
+    ],
+    "hf_datasets": {
+      "eng": "BabyLM-community/BabyLM-2026-Strict",
+      "nld": "BabyLM-community/babylm-nld",
+      "zho": "BabyLM-community/babylm-zho"
+    },
+    "total_tokens_target": 99000000,
+    "vocab_size_per_lang": 24000,
+    "tokmix_vocab_size": 48000,
+    "special_tokens": [
+      "<UNK>",
+      "<PAD>",
+      "<CLS>",
+      "<SEP>",
+      "<MASK>"
+    ],
+    "unk_token": "<UNK>",
+    "pad_token": "<PAD>",
+    "cls_token": "<CLS>",
+    "sep_token": "<SEP>",
+    "mask_token": "<MASK>",
+    "output_dir": "./tokenizers_tokmix_fixed",
+    "tokmix_weights": null,
+    "prob_floor": 1e-300,
+    "sentencepiece_replacement": "▁"
+  },
+  "budget_stats": {
+    "eng": {
+      "documents": 5814474,
+      "custom_content_units": 34467631,
+      "official_tokens": 33000005,
+      "official_byte_premium": 1.0,
+      "adjusted_budget": 33000005.0,
+      "utf8_bytes": 169735246,
+      "characters": 169635991,
+      "utf8_bytes_per_character": 1.0005851057868964
+    },
+    "nld": {
+      "documents": 255264,
+      "custom_content_units": 31434223,
+      "official_tokens": 31380598,
+      "official_byte_premium": 1.051606,
+      "adjusted_budget": 33000025.140388,
+      "utf8_bytes": 192407281,
+      "characters": 191884906,
+      "utf8_bytes_per_character": 1.002722335023058
+    },
+    "zho": {
+      "documents": 21940,
+      "custom_content_units": 44993554,
+      "official_tokens": 35260413,
+      "official_byte_premium": 0.935966,
+      "adjusted_budget": 33002547.713958,
+      "utf8_bytes": 139271735,
+      "characters": 49284627,
+      "utf8_bytes_per_character": 2.8258656598943115
+    }
+  },
+  "output_files": {
+    "tokmix_tokenizer_json": "./tokenizers_tokmix_fixed/tokmix_tokenizer.json",
+    "hf_tokenizer_dir": "./tokenizers_tokmix_fixed/hf_tokmix_tokenizer",
+    "monolingual_tokenizers_dir": "./tokenizers_tokmix_fixed/monolingual_tokenizers"
+  }
+}

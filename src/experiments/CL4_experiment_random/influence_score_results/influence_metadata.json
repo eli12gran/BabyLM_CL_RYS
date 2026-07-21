@@ -1,0 +1,99 @@
+{
+  "timestamp": "2026-07-07T00:42:58.329686",
+  "n_sequences": 119749,
+  "n_checkpoints": 10,
+  "surrogate_repo_id": "eligran12/babylm_CL4_surrogate",
+  "branches_used": [
+    "epoch_01",
+    "epoch_02",
+    "epoch_03",
+    "epoch_04",
+    "epoch_05",
+    "epoch_06",
+    "epoch_07",
+    "epoch_08",
+    "epoch_09",
+    "epoch_10"
+  ],
+  "dataset": "BabyLM-community/BabyLM-2026-Strict-Small",
+  "max_seq_length": 128,
+  "batch_size": 16,
+  "seed": 42,
+  "influence_formula": "phi_t(z, D) = cosine_similarity(grad_z, mean_grad_D)",
+  "gradient_layer": "transformer.wte (input embeddings, following Yeh et al. 2022)",
+  "normalisation": "L2 per-example gradient normalisation (cosine similarity, Section 3.1)",
+  "matrix_path": "./influence_output/influence_matrix.npy",
+  "per_checkpoint_stats": [
+    {
+      "checkpoint": "epoch_01",
+      "mean": 0.0051870387978851795,
+      "std": 0.013198697939515114,
+      "min": -0.04522460699081421,
+      "max": 0.05459814891219139
+    },
+    {
+      "checkpoint": "epoch_02",
+      "mean": 0.0007329905056394637,
+      "std": 0.003999877721071243,
+      "min": -0.015161363407969475,
+      "max": 0.01700780913233757
+    },
+    {
+      "checkpoint": "epoch_03",
+      "mean": 0.0005199519218876958,
+      "std": 0.00350225530564785,
+      "min": -0.01388281024992466,
+      "max": 0.014036744832992554
+    },
+    {
+      "checkpoint": "epoch_04",
+      "mean": 0.0001534935727249831,
+      "std": 0.0016288524493575096,
+      "min": -0.007525016088038683,
+      "max": 0.006213385611772537
+    },
+    {
+      "checkpoint": "epoch_05",
+      "mean": 7.506356632802635e-05,
+      "std": 0.001356157474219799,
+      "min": -0.004926000256091356,
+      "max": 0.004858421161770821
+    },
+    {
+      "checkpoint": "epoch_06",
+      "mean": 0.0004582943220157176,
+      "std": 0.0027289760764688253,
+      "min": -0.00885456707328558,
+      "max": 0.012762544676661491
+    },
+    {
+      "checkpoint": "epoch_07",
+      "mean": 8.010676538106054e-05,
+      "std": 0.0009398601250723004,
+      "min": -0.0036685157101601362,
+      "max": 0.003894268535077572
+    },
+    {
+      "checkpoint": "epoch_08",
+      "mean": 3.376850872882642e-05,
+      "std": 0.0006541918264701962,
+      "min": -0.0027852547354996204,
+      "max": 0.002811162732541561
+    },
+    {
+      "checkpoint": "epoch_09",
+      "mean": 2.162743294320535e-05,
+      "std": 0.000665299070533365,
+      "min": -0.002501361072063446,
+      "max": 0.002533550839871168
+    },
+    {
+      "checkpoint": "epoch_10",
+      "mean": 2.1867386749363504e-05,
+      "std": 0.0008172222296707332,
+      "min": -0.0028023021295666695,
+      "max": 0.002911078277975321
+    }
+  ],
+  "next_step": "Use influence_matrix.npy to sort training sequences. Best curriculum from paper: C^~_descending \u2014 sort by mean influence across all T checkpoints (descending = easy/prototypical first), then shuffle within bins of 1000 documents. See paper Section 3.2 and Figure 3."
+}
